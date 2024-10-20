@@ -992,51 +992,60 @@ mask-image: linear-gradient(to top, transparent 40%, #079097 80%) !important;
   font-size: 2rem; /* Default size for mobile */
   color: #ff69b4;
   text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493, 0 0 30px #ff69b4;
-  animation: glow 3s ease-in-out infinite, float 4s ease-in-out infinite;
-  opacity: 0;
+  animation: glow 3s ease-in-out infinite, float 4s ease-in-out infinite, fade-in-scale 3s ease-in-out forwards;
+  opacity: 0; /* You may want to control this for visibility */
+  text-align: center; /* Center-align text for better visibility */
+  width: 100%; /* Full width for responsiveness */
+  padding: 0 20px; /* Padding for small screens */
+}
+
+@media (min-width: 480px) {
+  .happy-text {
+    font-size: 2.5rem; /* Slightly larger for small devices */
+    padding: 0 30px; /* Adjust padding for better spacing */
+  }
 }
 
 @media (min-width: 768px) {
   .happy-text {
-      font-size: 4rem; /* Larger font size for tablets and small laptops */
+    font-size: 3rem; /* Adjust size for tablets */
+    padding: 0 40px; /* More padding for larger devices */
   }
 }
 
 @media (min-width: 1024px) {
   .happy-text {
-      font-size: 5rem; /* Larger font size for desktops */
+    font-size: 4rem; /* Adjust size for desktops */
+    padding: 0 50px; /* More padding for larger screens */
   }
 }
 
 @keyframes glow {
   0%, 100% {
-      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493, 0 0 30px #ff69b4;
+    text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493, 0 0 30px #ff69b4;
   }
   50% {
-      text-shadow: 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff1493;
+    text-shadow: 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff1493;
   }
 }
 
 @keyframes float {
   0%, 100% {
-      transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
   }
   50% {
-      transform: translate(-50%, -10px);
+    transform: translate(-50%, -10px);
   }
 }
 
 @keyframes fade-in-scale {
   0% {
-      opacity: 0;
-      transform: translateX(-50%) scale(0.5);
+    opacity: 0;
+    transform: translateX(-50%) scale(0.5);
   }
   100% {
-      opacity: 1;
-      transform: translateX(-50%) scale(1);
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
   }
 }
 
-.happy-text {
-  animation: glow 3s ease-in-out infinite, fade-in-scale 3s ease-in-out forwards;
-}
