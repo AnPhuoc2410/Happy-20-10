@@ -989,11 +989,23 @@ mask-image: linear-gradient(to top, transparent 40%, #079097 80%) !important;
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 3rem;
-  color: #ff69b4; /* A bright pink color */
+  font-size: 2rem; /* Default size for mobile */
+  color: #ff69b4;
   text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493, 0 0 30px #ff69b4;
   animation: glow 3s ease-in-out infinite, float 4s ease-in-out infinite;
   opacity: 0;
+}
+
+@media (min-width: 768px) {
+  .happy-text {
+      font-size: 3rem; /* Larger font size for tablets and small laptops */
+  }
+}
+
+@media (min-width: 1024px) {
+  .happy-text {
+      font-size: 4rem; /* Larger font size for desktops */
+  }
 }
 
 @keyframes glow {
